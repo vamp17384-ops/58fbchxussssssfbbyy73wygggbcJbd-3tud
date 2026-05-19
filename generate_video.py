@@ -44,6 +44,8 @@ Rules:
 - First-person, past tense, emotionally engaging
 - Clear setup, conflict, resolution or twist
 - No Edit sections, no usernames, no markdown
+- Start the story with a short punchy hook sentence (max 10 words) that grabs attention immediately, like "He cheated, so I ruined his life." or "My boss stole my work. Here's what I did." — dramatic, direct, no fluff
+- No punctuation like dots,commas etc
 - Title: Reddit-style question or punchy statement"""
 
     url = (
