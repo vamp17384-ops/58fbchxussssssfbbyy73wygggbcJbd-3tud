@@ -44,6 +44,7 @@ Rules:
 - First-person, past tense, emotionally engaging
 - Clear setup, conflict, resolution or twist
 - No Edit sections, no usernames, no markdown
+- Starts with a hook
 - Title: Reddit-style question or punchy statement"""
 
     url = (
