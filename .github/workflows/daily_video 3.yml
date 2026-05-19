@@ -1,0 +1,52 @@
+name: Reddit Story Bot — Daily Video
+
+on:
+  schedule:
+    - cron: '0 10 * * *'   # runs 10 AM UTC daily — video schedules for 11 PM UTC (7 PM EST)
+  workflow_dispatch:
+
+jobs:
+  make-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install FFmpeg & fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Install rclone
+        run: curl https://rclone.org/install.sh | sudo bash
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python packages
+        run: pip install requests
+
+      - name: Generate and upload video
+        env:
+          GEMINI_API_KEY:     ${{ secrets.GEMINI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          RCLONE_CONFIG_B64:  ${{ secrets.RCLONE_CONFIG_B64 }}
+          YT_CLIENT_ID:       ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET:   ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN:   ${{ secrets.YT_REFRESH_TOKEN }}
+          GDRIVE_FOLDER:      RedditStoryBot
+          PUBLISH_HOUR_UTC:   "23"   # 11 PM UTC = 7 PM EST = 4 PM PST
+        run: python generate_video.py
+
+      - name: Save video as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reddit-video-${{ github.run_id }}
+          path: output/*.mp4
+          retention-days: 7
