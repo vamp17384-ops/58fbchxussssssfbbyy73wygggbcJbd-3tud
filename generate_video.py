@@ -55,6 +55,7 @@ Story rules:
 - First-person, past tense, emotionally engaging
 - Clear setup, conflict, satisfying resolution or twist
 - No Edit sections, no usernames, no markdown
+- No ponciuation like dots or commas etc
 
 Also generate YouTube metadata:
 - yt_title: Punchy YouTube title under 70 chars, no clickbait emojis, grabs attention
