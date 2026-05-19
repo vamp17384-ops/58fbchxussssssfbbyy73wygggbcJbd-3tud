@@ -54,6 +54,7 @@ Story rules:
 - Story body: 130 to 150 words total including the hook
 - First-person, past tense, emotionally engaging
 - Clear setup, conflict, satisfying resolution or twist
+- No punctuation (dots, commas, semicolons, etc)
 - No Edit sections, no usernames, no markdown
 
 Also generate YouTube metadata:
