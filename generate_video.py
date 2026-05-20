@@ -54,6 +54,7 @@ Story rules:
 - Story body: 130 to 150 words total including the hook
 - First-person, past tense, emotionally engaging
 - Clear setup, conflict, satisfying resolution or twist
+- No pauses of any kind 
 - No poncuation like commas, periods , semicolons ect
 - No Edit sections, no usernames, no markdown
 
