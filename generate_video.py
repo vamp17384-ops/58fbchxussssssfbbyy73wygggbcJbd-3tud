@@ -26,7 +26,7 @@ YT_REFRESH_TOKEN   = os.environ["YT_REFRESH_TOKEN"]
 GDRIVE_FOLDER      = os.getenv("GDRIVE_FOLDER", "RedditStoryBot")
 
 VIDEO_W, VIDEO_H   = 1080, 1920
-VOICE_ID           = "pNInz6obpgDQGcFmaJgB"   # Adam — dominant, firm
+VOICE_ID           = "uxKr2vlA4hYgXZR1oPRT"   # Adam — dominant, firm
 FONT               = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 # YouTube publish time: next day at this hour UTC
@@ -54,6 +54,7 @@ Story rules:
 - Story body: 130 to 150 words total including the hook
 - First-person, past tense, emotionally engaging
 - Clear setup, conflict, satisfying resolution or twist
+- No poncuation like commas, periods , semicolons ect
 - No Edit sections, no usernames, no markdown
 
 Also generate YouTube metadata:
